@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ödeme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="checkout">
+  <div class="site-splash" data-splash>
+    <div class="splash-card">
+      <div class="splash-logo" data-splash-logo><img src="assets/img/koklu-logo.png" alt="Köklü Zeytinyağı logo"></div>
+      <h1 class="splash-title">Köklü</h1>
+      <p class="splash-text">Zeytinyağı</p>
+      <div class="splash-loader"><span></span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand"><span class="brand-logo" data-logo><img src="assets/img/koklu-logo.png" alt="Köklü Zeytinyağı logo"></span><span><strong data-brand-name>Köklü Zeytinyağı</strong><small data-slogan>Kökünden gelen hakiki lezzet</small></span></a>
+    <nav class="nav"><a href="index.html">Ana Sayfa</a><a href="products.html">Ürünler</a><a href="cart.html" class="cart-pill">Sepet <span data-cart-count>0</span></a></nav>
+    <button class="mobile-menu" type="button" aria-label="Menüyü aç">☰</button>
+  </header>
+  <main>
+    <section class="page-hero"><div class="container"><span class="eyebrow">IBAN ile ödeme</span><h1>Sipariş Bilgileri</h1><p>Sipariş oluşturulduktan sonra IBAN bilgisi ve sipariş kodu gösterilir.</p></div></section>
+    <section class="container section checkout-layout">
+      <form class="form-card" data-checkout-form>
+        <h2>Teslimat Bilgileri</h2>
+        <label>Ad Soyad<input required name="customer_name" placeholder="Adınız Soyadınız"></label>
+        <label>Telefon<input required name="phone" placeholder="05xx xxx xx xx"></label>
+        <label>Şehir<input required name="city" placeholder="Şehir"></label>
+        <label>Adres<textarea required name="address" rows="4" placeholder="Açık adres"></textarea></label>
+        <label>Not<textarea name="note" rows="3" placeholder="Varsa sipariş notu"></textarea></label>
+        <button class="btn primary full" type="submit">Siparişi Oluştur</button>
+      </form>
+      <aside class="payment-card">
+        <h2>Ödeme Bilgisi</h2>
+        <p data-payment-note>Siparişten sonra ödeme açıklamasına sipariş kodunu yaz.</p>
+        <div class="bank-box">
+          <span>Banka</span><strong data-bank-name>-</strong>
+          <span>Alıcı</span><strong data-iban-holder>-</strong>
+          <span>IBAN</span><strong data-iban>-</strong>
+        </div>
+        <div class="summary-row"><span>Toplam</span><strong data-cart-total>0 TL</strong></div>
+        <div class="order-result" data-order-result hidden></div>
+      </aside>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><p>© <span data-year></span> <span data-brand-name>Köklü Zeytinyağı</span>.</p><a href="admin.html">Admin Panel</a></div></footer>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

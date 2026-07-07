@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ürünler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="products">
+  <div class="site-splash" data-splash>
+    <div class="splash-card">
+      <div class="splash-logo" data-splash-logo><img src="assets/img/koklu-logo.png" alt="Köklü Zeytinyağı logo"></div>
+      <h1 class="splash-title">Köklü</h1>
+      <p class="splash-text">Zeytinyağı</p>
+      <div class="splash-loader"><span></span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand"><span class="brand-logo" data-logo><img src="assets/img/koklu-logo.png" alt="Köklü Zeytinyağı logo"></span><span><strong data-brand-name>Köklü Zeytinyağı</strong><small data-slogan>Kökünden gelen hakiki lezzet</small></span></a>
+    <nav class="nav"><a href="index.html">Ana Sayfa</a><a href="products.html">Ürünler</a><a href="index.html#reviews">Yorumlar</a><a href="index.html#contact">İletişim</a><a class="cart-pill" href="cart.html">Sepet <span data-cart-count>0</span></a></nav>
+    <button class="mobile-menu" type="button" aria-label="Menüyü aç">☰</button>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Ürün kataloğu</span>
+        <h1>Satıştaki Ürünler</h1>
+        <p>Admin panelinden eklediğin ürünler burada listelenir.</p>
+      </div>
+    </section>
+    <section class="container section">
+      <div class="toolbar">
+        <input class="search-input" type="search" data-product-search placeholder="Ürün ara...">
+        <select class="search-input" data-stock-filter>
+          <option value="all">Tüm ürünler</option>
+          <option value="stock">Stokta olanlar</option>
+        </select>
+      </div>
+      <div class="products-grid" data-products></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><p>© <span data-year></span> <span data-brand-name>Köklü Zeytinyağı</span>.</p><a href="admin.html">Admin Panel</a></div></footer>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
