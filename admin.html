@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin" class="admin-body">
+  <main class="admin-shell">
+    <section class="admin-login" data-login-panel>
+      <div class="login-card">
+        <div class="brand center-brand"><span class="brand-logo"><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></span><span><strong>Admin Panel</strong><small>Zeytinyağı satış sitesi</small></span></div>
+        <div class="notice warning" data-config-warning hidden>Önce config.js dosyasına Supabase URL ve anon key girmen gerekiyor.</div>
+        <form data-login-form class="stack">
+          <label>E-posta<input type="email" name="email" required placeholder="admin@email.com"></label>
+          <label>Şifre<input type="password" name="password" required placeholder="••••••••"></label>
+          <button class="btn primary full" type="submit">Giriş Yap</button>
+        </form>
+        <p class="small">Adminleri Supabase Authentication üzerinden oluşturup SQL’de admin_users tablosuna ekleyeceksin.</p>
+        <a class="text-link" href="index.html">Siteye dön</a>
+      </div>
+    </section>
+
+    <section class="admin-panel" data-admin-panel hidden>
+      <aside class="admin-sidebar">
+        <a href="index.html" class="brand"><span class="brand-logo"><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></span><span><strong>Panel</strong><small>Yönetim</small></span></a>
+        <button class="admin-tab active" data-tab="settings" type="button">Site Ayarları</button>
+        <button class="admin-tab" data-tab="products" type="button">Ürünler</button>
+        <button class="admin-tab" data-tab="reviews" type="button">Yorumlar</button>
+        <button class="admin-tab" data-tab="orders" type="button">Siparişler</button>
+        <button class="btn ghost-dark full" data-logout type="button">Çıkış Yap</button>
+      </aside>
+
+      <div class="admin-content">
+        <div class="admin-topbar">
+          <div><h1>Yönetim Paneli</h1><p>Marka bilgileri, ürünler, yorumlar ve siparişleri buradan yönet.</p></div>
+          <a class="btn secondary" href="index.html">Siteyi Aç</a>
+        </div>
+        <div data-admin-message></div>
+
+        <section class="admin-section active" data-section="settings">
+          <form class="admin-card grid-form" data-settings-form>
+            <h2>Genel Bilgiler</h2>
+            <label>Marka adı<input name="brand_name" placeholder="Örn: Ege Zeytin"></label>
+            <label>Slogan<input name="slogan" placeholder="Örn: Dalından sofranıza"></label>
+            <label>Kısa açıklama<textarea name="short_description" rows="3"></textarea></label>
+            <label>Şehir<input name="city" placeholder="Örn: Balıkesir"></label>
+            <label>Adres<textarea name="address" rows="3"></textarea></label>
+            <label class="inline"><input type="checkbox" name="show_address"> Adresi sitede göster</label>
+            <label>Telefon<input name="phone" placeholder="05xx xxx xx xx"></label>
+            <label>WhatsApp<input name="whatsapp" placeholder="905xx xxx xx xx"></label>
+            <label>Instagram linki<input name="instagram_url" placeholder="https://instagram.com/... "></label>
+            <label>Facebook linki<input name="facebook_url" placeholder="https://facebook.com/... "></label>
+            <label>E-posta<input name="email" placeholder="info@site.com"></label>
+            <h2>Ödeme / IBAN</h2>
+            <label>Banka adı<input name="bank_name" placeholder="Banka adı"></label>
+            <label>Alıcı adı<input name="iban_holder" placeholder="Alıcı adı"></label>
+            <label>IBAN<input name="iban" placeholder="TR00 0000 0000 0000 0000 0000 00"></label>
+            <label>Ödeme notu<textarea name="payment_note" rows="3"></textarea></label>
+            <label>Kargo notu<textarea name="shipping_text" rows="3"></textarea></label>
+            <h2>Ana Sayfa</h2>
+            <label>Hero başlık<input name="hero_title"></label>
+            <label>Hero alt açıklama<textarea name="hero_subtitle" rows="3"></textarea></label>
+            <label>Kampanya başlığı<input name="campaign_title"></label>
+            <label>Kampanya açıklaması<textarea name="campaign_text" rows="3"></textarea></label>
+            <label>Logo yükle<input type="file" name="logo_file" accept="image/*"></label>
+            <label>Ana sayfa görseli yükle<input type="file" name="hero_file" accept="image/*"></label>
+            <input type="hidden" name="logo_url">
+            <input type="hidden" name="hero_image_url">
+            <button class="btn primary" type="submit">Ayarları Kaydet</button>
+          </form>
+        </section>
+
+        <section class="admin-section" data-section="products">
+          <form class="admin-card grid-form" data-product-form>
+            <h2>Ürün Ekle / Düzenle</h2>
+            <input type="hidden" name="id">
+            <label>Ürün adı<input required name="name" placeholder="5 Litre Naturel Sızma"></label>
+            <label>Boyut / Litre<input name="size_label" placeholder="5 Litre"></label>
+            <label>Fiyat<input required name="price" type="number" step="0.01" placeholder="1850"></label>
+            <label>Eski fiyat<input name="old_price" type="number" step="0.01" placeholder="2200"></label>
+            <label>Etiket<input name="badge" placeholder="Soğuk sıkım"></label>
+            <label>Kısa açıklama<textarea name="short_description" rows="2"></textarea></label>
+            <label>Detaylı açıklama<textarea name="description" rows="4"></textarea></label>
+            <label>Sıralama<input name="display_order" type="number" value="0"></label>
+            <label>Ürün fotoğrafı<input type="file" name="image_file" accept="image/*"></label>
+            <input type="hidden" name="image_url">
+            <label class="inline"><input type="checkbox" name="in_stock" checked> Stokta var</label>
+            <label class="inline"><input type="checkbox" name="featured" checked> Ana sayfada göster</label>
+            <label class="inline"><input type="checkbox" name="active" checked> Aktif</label>
+            <div class="form-actions"><button class="btn primary" type="submit">Ürünü Kaydet</button><button class="btn ghost-dark" data-product-reset type="button">Yeni Ürün</button></div>
+          </form>
+          <div class="admin-card"><h2>Ürün Listesi</h2><div class="admin-list" data-admin-products></div></div>
+        </section>
+
+        <section class="admin-section" data-section="reviews">
+          <form class="admin-card grid-form" data-review-form>
+            <h2>Yorum Ekle / Düzenle</h2>
+            <input type="hidden" name="id">
+            <label>Müşteri adı<input required name="customer_name" placeholder="Ayşe K."></label>
+            <label>Şehir<input name="city" placeholder="Bursa"></label>
+            <label>Puan<select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
+            <label>Yorum<textarea required name="comment" rows="4"></textarea></label>
+            <label>Sıralama<input name="display_order" type="number" value="0"></label>
+            <label class="inline"><input type="checkbox" name="active" checked> Aktif</label>
+            <div class="form-actions"><button class="btn primary" type="submit">Yorumu Kaydet</button><button class="btn ghost-dark" data-review-reset type="button">Yeni Yorum</button></div>
+          </form>
+          <div class="admin-card"><h2>Yorum Listesi</h2><div class="admin-list" data-admin-reviews></div></div>
+        </section>
+
+        <section class="admin-section" data-section="orders">
+          <div class="admin-card">
+            <div class="section-head compact"><h2>Siparişler</h2><p>Müşteri ödeme yaptıktan sonra sipariş durumunu buradan güncelle.</p></div>
+            <div class="admin-list" data-admin-orders></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

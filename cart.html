@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sepet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="cart">
+  <div class="site-splash" data-splash>
+    <div class="splash-card">
+      <div class="splash-logo" data-splash-logo><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></div>
+      <h1 class="splash-title">Köklü</h1>
+      <p class="splash-text">Zeytinyağı</p>
+      <div class="splash-loader"><span></span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand"><span class="brand-logo" data-logo><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></span><span><strong data-brand-name>Köklü Zeytinyağı</strong><small data-slogan>Kökünden gelen hakiki lezzet</small></span></a>
+    <nav class="nav"><a href="index.html">Ana Sayfa</a><a href="products.html">Ürünler</a><a href="index.html#contact">İletişim</a><a class="cart-pill" href="cart.html">Sepet <span data-cart-count>0</span></a></nav>
+    <button class="mobile-menu" type="button" aria-label="Menüyü aç">☰</button>
+  </header>
+  <main>
+    <section class="page-hero"><div class="container"><span class="eyebrow">Sipariş</span><h1>Sepetim</h1><p>Ürünleri kontrol edip ödeme adımına geçebilirsin.</p></div></section>
+    <section class="container section cart-layout">
+      <div class="cart-items" data-cart-items></div>
+      <aside class="summary-card">
+        <h3>Sipariş Özeti</h3>
+        <div class="summary-row"><span>Ara toplam</span><strong data-cart-total>0 TL</strong></div>
+        <p class="small">Kargo ve ödeme notu işletme tarafından ayrıca belirtilebilir.</p>
+        <a class="btn primary full" href="checkout.html">Ödemeye Geç</a>
+        <button class="btn ghost-dark full" data-clear-cart type="button">Sepeti Temizle</button>
+      </aside>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><p>© <span data-year></span> <span data-brand-name>Köklü Zeytinyağı</span>.</p><a href="admin.html">Admin Panel</a></div></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

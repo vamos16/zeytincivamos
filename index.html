@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Köklü Zeytinyağı</title>
+  <meta name="description" content="Doğal zeytinyağı satış sitesi" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home">
+  <div class="site-splash" data-splash>
+    <div class="splash-card">
+      <div class="splash-logo" data-splash-logo><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></div>
+      <h1 class="splash-title">Köklü</h1>
+      <p class="splash-text">Zeytinyağı</p>
+      <div class="splash-loader"><span></span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <span class="brand-logo" data-logo><img src="koklu-logo.png" alt="Köklü Zeytinyağı logo"></span>
+      <span>
+        <strong data-brand-name>Köklü Zeytinyağı</strong>
+        <small data-slogan>Kökünden gelen hakiki lezzet</small>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="products.html">Ürünler</a>
+      <a href="#reviews">Yorumlar</a>
+      <a href="#contact">İletişim</a>
+      <a class="cart-pill" href="cart.html">Sepet <span data-cart-count>0</span></a>
+    </nav>
+    <button class="mobile-menu" type="button" aria-label="Menüyü aç">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg" data-hero-bg></div>
+      <div class="hero-content container">
+        <div class="eyebrow">Hakiki • Doğal • Güvenilir</div>
+        <h1 data-hero-title>Kaliteli zeytinyağını şık ve güven veren bir sitede satın.</h1>
+        <p data-hero-subtitle>Bu alanı admin panelinden marka sloganın, kampanyan ve açıklamanla değiştirebilirsin.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="products.html">Ürünleri İncele</a>
+          <a class="btn ghost" data-whatsapp-link href="#contact">WhatsApp Sipariş</a>
+        </div>
+        <div class="trust-row">
+          <span>Soğuk sıkım</span>
+          <span>Özenli paketleme</span>
+          <span>IBAN ile ödeme</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section grid-3">
+      <article class="feature-card">
+        <span class="icon">🫒</span>
+        <h3>Doğal Ürün Vurgusu</h3>
+        <p>Katkısız, soğuk sıkım, erken hasat gibi etiketleri ürün bazında panelden yönet.</p>
+      </article>
+      <article class="feature-card">
+        <span class="icon">📦</span>
+        <h3>Kargo Bilgilendirme</h3>
+        <p>Kargo ücreti, teslimat süresi ve ödeme notlarını admin panelinden değiştir.</p>
+      </article>
+      <article class="feature-card">
+        <span class="icon">💳</span>
+        <h3>IBAN / EFT / Havale</h3>
+        <p>Ödeme ekranında IBAN, alıcı adı ve banka bilgileri otomatik gösterilir.</p>
+      </article>
+    </section>
+
+    <section class="container section split">
+      <div>
+        <span class="eyebrow dark">Kampanya Alanı</span>
+        <h2 data-campaign-title>Admin panelinden kampanya başlığı gir.</h2>
+        <p data-campaign-text>Bu bölüm ana sayfadaki kampanyayı, avantajı veya güven mesajını göstermek için hazırlandı.</p>
+        <a class="text-link" href="products.html">Kampanyalı ürünlere bak →</a>
+      </div>
+      <div class="promo-box">
+        <strong>Panelden değişebilir</strong>
+        <p>Logo, ana görsel, IBAN, telefon, yorumlar, ürünler ve fiyatlar tek panelden yönetilir.</p>
+      </div>
+    </section>
+
+    <section class="section muted">
+      <div class="container section-head">
+        <span class="eyebrow dark">Öne çıkanlar</span>
+        <h2>Ürünler</h2>
+        <p>Ürün eklediğinde burada otomatik görünecek.</p>
+      </div>
+      <div class="container products-grid" data-featured-products></div>
+      <div class="container center mt-24">
+        <a class="btn secondary" href="products.html">Tüm Ürünler</a>
+      </div>
+    </section>
+
+    <section class="container section" id="reviews">
+      <div class="section-head">
+        <span class="eyebrow dark">Müşteri yorumları</span>
+        <h2>Yorumlar</h2>
+        <p>Yorumları admin panelinden ekleyip silebilirsin.</p>
+      </div>
+      <div class="reviews-grid" data-reviews></div>
+    </section>
+
+    <section class="container section faq-contact" id="contact">
+      <div class="faq-card">
+        <h2>Sık Sorulanlar</h2>
+        <details open>
+          <summary>Ödeme nasıl yapılıyor?</summary>
+          <p data-payment-note>Siparişten sonra IBAN bilgisi gösterilir. Ödeme açıklamasına sipariş kodu yazılır.</p>
+        </details>
+        <details>
+          <summary>Kargo bilgisi nedir?</summary>
+          <p data-shipping-text>Kargo ve teslimat bilgilerini admin panelinden değiştirebilirsin.</p>
+        </details>
+        <details>
+          <summary>Kapıda ödeme var mı?</summary>
+          <p>Bu şablon IBAN / Havale / EFT ödeme sistemine göre hazırlandı.</p>
+        </details>
+      </div>
+      <div class="contact-card">
+        <h2>İletişim</h2>
+        <p data-short-description>Zeytinyağı markanı anlatan kısa açıklama burada görünür.</p>
+        <ul class="contact-list">
+          <li><strong>Telefon:</strong> <span data-phone>-</span></li>
+          <li><strong>WhatsApp:</strong> <span data-whatsapp>-</span></li>
+          <li><strong>Şehir:</strong> <span data-city>-</span></li>
+          <li data-address-row><strong>Adres:</strong> <span data-address>-</span></li>
+          <li><strong>E-posta:</strong> <span data-email>-</span></li>
+        </ul>
+        <a class="btn primary full" data-whatsapp-link href="#">WhatsApp’tan Yaz</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span data-year></span> <span data-brand-name>Köklü Zeytinyağı</span>. Tüm hakları saklıdır.</p>
+      <a href="admin.html">Admin Panel</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
